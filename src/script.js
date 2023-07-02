@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
             lang.classList.remove('active');
         })
         this.classList.add('active');
+        console.log(this.dataset)
+        const langFlag = langBtn.querySelector('.lang-flag');
+        langBtn.querySelector('.country-name').innerHTML = this.dataset.lang[0].toUpperCase() + this.dataset.lang.substring(1);
+        langFlag.removeAttribute('class');
+        langFlag.classList.add('lang-flag', 'lang-flag_big', `lang-${this.dataset.lang}`);
         setTimeout(() => {
             langSelect.style.display = 'none';
         }, 100);
